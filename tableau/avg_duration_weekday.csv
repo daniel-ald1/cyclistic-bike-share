@@ -1,0 +1,15 @@
+weekday,member_casual,avg_minutes
+Monday,casual,19.99
+Monday,member,11.94
+Tuesday,casual,17.58
+Tuesday,member,11.83
+Wednesday,casual,16.90
+Wednesday,member,11.72
+Thursday,casual,17.81
+Thursday,member,11.81
+Friday,casual,19.74
+Friday,member,12.19
+Saturday,casual,22.52
+Saturday,member,13.53
+Sunday,casual,23.32
+Sunday,member,13.41

@@ -1,16 +1,16 @@
 # Tableau Build Guide: Cyclistic Members vs Casuals
 
-I rebuilt my three Python charts in Tableau Public so stakeholders can filter the patterns themselves. My source is the cleaned Parquet in data_clean/trips_clean/, and my sanity checks below use the real analysis numbers. If a view disagrees with them, my build is wrong rather than the data.
+I rebuilt my three Python charts in Tableau Public so stakeholders can filter the patterns themselves. My source is the cleaned Parquet in data_clean/trips_clean/, which I aggregate into three small CSVs in tableau/ for Tableau Public, and my sanity checks below use the real analysis numbers. If a view disagrees with them, my build is wrong rather than the data.
 
 ## Connect the data
 
-Tableau Public cannot read partitioned Parquet directly, so I export one flat file first. From the repo root I run a DuckDB export into a single CSV, then connect Tableau to that CSV. The export keeps the columns the sheets need: ym, member_casual, ride_length_min, rideable_type, started_at, and start_station_name.
+Tableau Public cannot read partitioned Parquet directly, and it never needs the 6.3M-row trip table, so I export three small aggregate CSVs first. From the repo root I run one DuckDB export per sheet into tableau/, then connect Tableau to those CSVs. The exports keep only the columns each sheet needs: monthly_volume_membership.csv carries ym, member_casual, and rides; avg_duration_weekday.csv carries weekday, member_casual, and avg_minutes; and top_casual_stations.csv carries station and rides.
 
-1. Run the export from the repo root with DuckDB and confirm one CSV appears, plus a row count near 6,293,342.
-2. Open Tableau Desktop or Tableau Public and choose Connect, then Text File, and point it at the exported CSV.
-3. In the Data Source tab, confirm ym reads as a string, member_casual reads as a string, ride_length_min reads as a number, and started_at reads as date and time.
+1. Run the export from the repo root with DuckDB and confirm three CSVs appear in tableau/: monthly_volume_membership.csv with 26 rows, avg_duration_weekday.csv with 14 rows, and top_casual_stations.csv with 10 rows.
+2. Open Tableau Desktop or Tableau Public and choose Connect, then Text File, and point it at the three CSVs in tableau/, one data source per sheet: Monthly Volume reads monthly_volume_membership.csv, Weekday Duration reads avg_duration_weekday.csv, and Top Casual Stations reads top_casual_stations.csv.
+3. In the Data Source tab, confirm ym, member_casual, weekday, and station read as strings, and rides and avg_minutes read as numbers.
 4. Create an extract with Data, then Create Data Extract, so publishing to Tableau Public carries the data with the workbook.
-5. Sanity check before building anything: create a quick text table with CNT of rows. I expect about 6,293,342. A second check on member_casual share should read 64.42% member and 35.58% casual. When both match, I start the sheets.
+5. Sanity check before building anything: monthly_volume_membership.csv sums to 6,293,342 rides, with member share reading 64.42% member and 35.58% casual. Top_casual_stations.csv reads Navy Pier at 50,894 on top, and avg_duration_weekday.csv reads 22.52 for casuals on Saturday and 23.32 on Sunday. When all match, I start the sheets.
 
 ## Sheet 1: Monthly volume, members vs casuals
 
