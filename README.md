@@ -30,7 +30,8 @@ Casual trips cluster on the lakefront leisure corridor. The top casual start sta
 
 ## Share
 
-I built three charts from the cleaned Parquet with charts/make_charts.py, and I am rebuilding the same views in Tableau Public following tableau/TABLEAU-CONNECT.md.
+I built three charts from the cleaned Parquet with charts/make_charts.py. Interactive dashboard (Tableau Public):
+https://public.tableau.com/app/profile/daniel.aldana3931/viz/CyclisticBike-Share-Capstone_17940065038050/CyclisticBike-Share-Capstone
 
 Monthly volume shows the seasonal swing. July towers over January, and the casual slice grows and shrinks with the weather.
 

@@ -8,8 +8,8 @@ My takeaway: the membership pitch belongs on the lakefront corridor on summer we
 
 I cleaned the data with Python and DuckDB, ran the analysis in SQL, and charted it in Python and Tableau.
 
-Code: [GITHUB-LINK]
+Code: https://github.com/daniel-ald1/cyclistic-bike-share
 Writeup: [KAGGLE-LINK]
-Dashboard: [TABLEAU-LINK]
+Dashboard: https://public.tableau.com/app/profile/daniel.aldana3931/viz/CyclisticBike-Share-Capstone_17940065038050/CyclisticBike-Share-Capstone
 
 If you hire junior data analysts, I would love your feedback on the repo.
