@@ -1,0 +1,9 @@
+# Kaggle writeup
+
+I analyzed 12 months of Chicago bike-share trips to answer one question: how do casual riders use the bikes differently from annual members, and what would convince more casual riders to buy a membership?
+
+I started with 6,294,451 raw Divvy trip records covering Nov 2025 to Oct 2026 and cleaned them to 6,293,342 rides. Cleaning removed 1,109 rows: 35 duplicate ride ids, 29 negative durations, and 1,045 depot, warehouse, or test station rides. I kept 5,148 rides over 24 hours and the 1.3 million dockless trips with blank station names, and I report medians next to means so long rides cannot hide the story. My pipeline is Python plus DuckDB in sql/build_clean.py, my rules are in sql/cleaning.sql, and my eight analysis queries are in sql/analysis.sql.
+
+Members take 64.42% of rides (4,054,095) and casuals take 35.58% (2,239,247), but the habits diverge sharply. Casuals average 20.14 minutes a ride against 12.27 for members, with medians of 10.73 and 8.50, and the gap holds in every month from 4.9 minutes in January to 9.5 in May. Weekends belong to casuals: 482,000 Saturday rides at 22.5 minutes and 363,000 Sunday rides at 23.3 minutes, while members peak on Tuesdays with 661,000 rides near 12 minutes. July brought 869,000 rides at a 41.2% casual share while January brought 138,000 at 18.0%. Casuals on classic bikes average 39.8 minutes, and the top casual station is Navy Pier with 50,894 rides on a lakefront corridor that dominates the top 10.
+
+My three recommendations follow the numbers. I would pitch membership on summer weekends at Navy Pier, Millennium Park, and the museum campus, aim a break-even offer at long-ride classic-bike casuals, and run the conversion push in September and October before casual share slides from 41% toward 20%. Full charts and code are in the linked GitHub repo.
