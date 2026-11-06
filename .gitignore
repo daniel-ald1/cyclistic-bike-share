@@ -1,0 +1,10 @@
+# Raw Divvy zips are large; prefer LFS or releases for binaries
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
+# Python / OS noise
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
