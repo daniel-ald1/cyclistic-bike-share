@@ -14,7 +14,7 @@ Tableau Public cannot read partitioned Parquet directly, so I export one flat fi
 
 ## Sheet 1: Monthly volume, members vs casuals
 
-This is the seasonal swing view. My checks are July at 869,000 rides with a 41.2% casual share and January at 138,000 rides with an 18.0% casual share.
+This is the seasonal swing view. July should read 869,000 rides with a 41.2% casual share and January 138,000 rides with an 18.0% casual share.
 
 1. Open a new sheet and name it Monthly Volume.
 2. Drag ym to Columns. Right click it and set Sort to Ascending so months run Nov 2025 to Oct 2026.
@@ -27,7 +27,7 @@ This is the seasonal swing view. My checks are July at 869,000 rides with a 41.2
 
 ## Sheet 2: Average duration by weekday and membership
 
-This is the habit split view. My checks are casuals at 22.5 minutes on Saturday and 23.3 on Sunday against members near 12 minutes every day, with an overall average of 20.14 for casuals and 12.27 for members.
+This is the habit split view. Casuals should read 22.5 minutes on Saturday and 23.3 on Sunday against members near 12 minutes every day, with overall averages of 20.14 for casuals and 12.27 for members.
 
 1. Open a new sheet and name it Weekday Duration.
 2. Create a calculated field named Weekday with the formula DATENAME('weekday', [started_at]).
@@ -41,7 +41,7 @@ This is the habit split view. My checks are casuals at 22.5 minutes on Saturday 
 
 ## Sheet 3: Top 10 casual start stations
 
-This is the geography view. My check is Navy Pier on top with 50,894 casual rides, followed by the lakefront corridor stations.
+This is the geography view. Navy Pier belongs on top with 50,894 casual rides, followed by the lakefront corridor stations.
 
 1. Open a new sheet and name it Top Casual Stations.
 2. Drag start_station_name to Rows.

@@ -4,7 +4,7 @@ I analyzed 12 months of Chicago bike-share trips to answer one question: how do 
 
 ## Ask
 
-I took the role of a junior analyst on the Cyclistic marketing team. Leadership wants to grow the business by converting casual riders into annual members, because members are more profitable over time. My task was to find how the two groups differ in riding habits and to recommend marketing actions that could drive conversions. Success meant concrete findings backed by trip counts plus a plan aimed at the casual riders most likely to join.
+I took the role of a junior analyst on the Cyclistic marketing team. Leadership wants to grow the business by converting casual riders into annual members, because members are more profitable over time. My task was to find how the two groups differ in riding habits and to recommend marketing actions that could drive conversions. I needed real findings with trip counts behind them, plus a plan aimed at the casuals most likely to join.
 
 ## Prepare
 
